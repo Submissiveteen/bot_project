@@ -1,6 +1,6 @@
-from repositories.wallet_repository import WalletRepository
+from eco_bot.repositories.wallet_repository import WalletRepository
 from utils.vault import KeyVault
-from repositories.models import User
+from eco_bot.repositories.models import User
 
 def test_wallet_creation():
     test_id = 999999
