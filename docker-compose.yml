@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  ecobot:
+    build: .
+    container_name: ecobot
+    restart: always
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - DB_URL=sqlite:///data/bot.db
+    volumes:
+      - .:/app
+    command: ["python", "main.py"]
+
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: ecobot
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: ecobotdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

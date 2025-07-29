@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.dll
+
+# Virtual envs & local env files
+venv/
+.venv/
+.env
+
+# Local databases / dumps / archives
+*.db
+*.sqlite3
+*.zip
+
+# OS / IDE junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Build / dist artifacts
+build/
+dist/
+*.egg-info/
+*.dist-info/
+
+# Tests / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/

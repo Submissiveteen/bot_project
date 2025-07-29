@@ -1,0 +1,31 @@
+{
+    "eco_per_kg": 1,
+    "xp_per_kg": 10,
+    "max_recycle_kg_per_day": 10,
+    "eco_exchange_rate_usd": 0.15,
+    "level_formula": {
+      "base": 100,
+      "multiplier": 2
+    },
+    "rewards": {
+      "upgrade_bonus_xp_multiplier": 1.1,
+      "achievements": {
+        "first_recycle": {
+          "title": "Первые 100 грамм!",
+          "eco": 1,
+          "xp": 5
+        },
+        "kg_10": {
+          "title": "10 кг спасены",
+          "eco": 5,
+          "xp": 20
+        },
+        "top_level": {
+          "title": "Эко-Гуру!",
+          "eco": 25,
+          "xp": 100
+        }
+      }
+    }
+  }
+  

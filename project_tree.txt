@@ -1,0 +1,108 @@
+.
+├── LICENSE
+├── README.md
+├── bot
+│   └── bot.py
+├── bot.zip
+├── check_env.py
+├── config
+│   ├── __pycache__
+│   │   └── config.cpython-313.pyc
+│   └── config.py
+├── data
+│   ├── character_levels.json
+│   └── eco_model.json
+├── docker-compose.yml
+├── handlers
+│   ├── __pycache__
+│   │   ├── achievements_handler.cpython-313.pyc
+│   │   ├── menu_handler.cpython-313.pyc
+│   │   ├── telegram_handlers.cpython-313.pyc
+│   │   └── upgrade_handler.cpython-313.pyc
+│   ├── achievements_handler.py
+│   ├── beg_handler.py
+│   ├── eco_history_handler.py
+│   ├── events_handler.py
+│   ├── flex_handler.py
+│   ├── inventory_handler.py
+│   ├── market_handler.py
+│   ├── menu_handler.py
+│   ├── mylook_handler.py
+│   ├── telegram_handlers.py
+│   ├── upgrade_handler.py
+│   └── use_item_handler.py
+├── knowledge
+│   ├── Archive
+│   │   └── черновики одинаковые.docx
+│   ├── core
+│   │   ├── Kodocop.md
+│   │   ├── MVP ROADMAP.docx
+│   │   ├── QA.md
+│   │   ├── READMEplan.md
+│   │   ├── project_journal.md
+│   │   ├── readme.md
+│   │   ├── лог действий.docx
+│   │   ├── финал неполный.docx.md
+│   │   └── Конечная дорожная карта.docx
+│   ├── json
+│   │   ├── api_test_requests.json
+│   │   ├── character_levels.json
+│   │   ├── eco_model.json
+│   │   └── initial_promt.json
+│   ├── new
+│   │   ├── HISTORY.md
+│   │   ├── INDEX.md
+│   │   ├── README.md
+│   │   ├── ROADMAP.md
+│   │   └── STATUS_SUMMARY.md
+│   └── test
+│       ├── HISTORY .md
+│       ├── README .md
+│       ├── RISKS_AND_MITIGATIONS.md
+│       ├── ROADMAP.md
+│       └── STATUS_CHECKLIST.md
+├── main.py
+├── mypy.ini
+├── project_journal.md
+├── project_tree.txt
+├── pyproject.toml
+├── repositories
+│   ├── __pycache__
+│   │   ├── db.cpython-313.pyc
+│   │   ├── init_db.cpython-313.pyc
+│   │   ├── models.cpython-313.pyc
+│   │   └── wallet_repository.cpython-313.pyc
+│   ├── db.py
+│   ├── init_db.py
+│   ├── models.py
+│   └── wallet_repository.py
+├── requirements.txt
+├── scripts
+│   └── tree_generator.py
+├── services
+│   ├── __pycache__
+│   │   ├── admin_service.cpython-313.pyc
+│   │   ├── export_service.cpython-313.pyc
+│   │   ├── gamification_service.cpython-313.pyc
+│   │   ├── sendeco_service.cpython-313.pyc
+│   │   ├── transfer_service.cpython-313.pyc
+│   │   └── wallet_service.cpython-313.pyc
+│   ├── admin_service.py
+│   ├── export_service.py
+│   ├── gamification_service.py
+│   ├── sendeco_service.py
+│   ├── transfer_service.py
+│   └── wallet_service.py
+├── tests
+│   ├── conftest.py
+│   ├── test_vault.py
+│   └── test_wallet_service.py
+├── users.db
+└── utils
+    ├── __pycache__
+    │   ├── keygen.cpython-313.pyc
+    │   └── vault.cpython-313.pyc
+    ├── keygen.py
+    └── vault.py
+
+21 directories, 85 files
