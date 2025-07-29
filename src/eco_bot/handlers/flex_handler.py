@@ -4,7 +4,7 @@ from telegram.ext import CommandHandler, CallbackContext
 from repositories.db import SessionLocal
 from repositories.models import User
 from services.gamification_service import get_level_info
-from handlers.mylook_handler import generate_avatar
+from eco_bot.handlers.mylook_handler import generate_avatar
 
 def flex(update: Update, context: CallbackContext):
     user_id = update.effective_user.id

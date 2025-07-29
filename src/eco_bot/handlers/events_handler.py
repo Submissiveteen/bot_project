@@ -1,7 +1,7 @@
 from repositories.db import SessionLocal
 from repositories.models import User
 from services.gamification_service import calc_rewards_for_recycle, get_level_info
-from handlers.mylook_handler import generate_avatar
+from eco_bot.handlers.mylook_handler import generate_avatar
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
