@@ -1,22 +1,30 @@
-[tool.black]
-line-length = 100
-target-version = ['py310']
-skip-string-normalization = true
+# ✱✱ pyproject.toml (добавьте/замените)
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
 
-[tool.isort]
-profile = "black"
-line_length = 100
+[project]
+name = "eco-bot"
+version = "0.1.0"
+description = "Telegram-бот для эко-геймификации"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "aiogram>=3.2",
+  "SQLAlchemy>=2.0",
+  "alembic>=1.16",
+  "pydantic>=2.6"
+]
 
-[tool.flake8]
-max-line-length = 100
-exclude = ["__pycache__", "venv", ".venv", "build", "dist"]
-ignore = ["E203", "W503"]
+[tool.setuptools.package-dir]      # ← говорит: «корнем пакетов будет src»
+"" = "src"
 
-[tool.mypy]
-python_version = "3.10"
-ignore_missing_imports = true
-check_untyped_defs = true
-warn_unused_ignores = true
-disallow_untyped_defs = false
-disallow_incomplete_defs = false
-show_error_codes = true
+[tool.setuptools.packages.find]    # ← автопоиск пакетов внутри src
+where = ["src"]
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff", "mypy"]
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]

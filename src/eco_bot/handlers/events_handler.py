@@ -1,12 +1,12 @@
 from repositories.db import SessionLocal
 from repositories.models import User
 from services.gamification_service import calc_rewards_for_recycle, get_level_info
-from handlers.mylook_handler import generate_avatar
+from eco_bot.handlers.mylook_handler import generate_avatar
 
-from telegram import Update
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 
-from datetime import datetime
+import random
 
 def recycle(telegram_id: int, kg: float) -> str:
     with SessionLocal() as db:
@@ -35,13 +35,22 @@ def recycle(telegram_id: int, kg: float) -> str:
         db.commit()
 
         level_info = get_level_info(user.xp)
+        phrases = [
+            "Ты спас 🐢 от пластикового ада!",
+            "Макулатура трепещет перед тобой!",
+            "Чистый ты человек, хоть и воняет... 🤢",
+            "Пакетики дрожат при звуке твоего имени",
+            "💥 Ты переработал, Земля благодарит!"
+        ]
+        flavor = random.choice(phrases)
 
         msg = (
             f"{level_info['emoji']} {level_info['title']}\n"
             f"♻️ Переработано: {kg} кг\n"
             f"💰 ECO: {user.eco_balance}\n"
             f"📈 XP: {user.xp}\n"
-            f"🏅 Уровень: {user.level}"
+            f"🏅 Уровень: {user.level}\n"
+            f"\n{flavor}"
         )
 
         if leveled_up:
@@ -87,5 +96,11 @@ def get_profile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             f"📦 Пластика сдано: {user.plastic_total} кг"
         )
 
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🏆 Ачивки", callback_data="achievements"),
+             InlineKeyboardButton("🎒 Инвентарь", callback_data="inventory")],
+            [InlineKeyboardButton("🧱 Апгрейд", callback_data="upgrade")]
+        ])
+
         avatar = generate_avatar(user)
-        update.message.reply_photo(photo=avatar, caption=caption)
+        update.message.reply_photo(photo=avatar, caption=caption, reply_markup=keyboard)
